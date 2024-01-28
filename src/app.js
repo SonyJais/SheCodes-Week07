@@ -10,6 +10,16 @@ function refreshWeather(response) {
   let speedVal = document.querySelector("#windSpeed");
   let windSpeedVal = response.data.wind.speed;
   speedVal.innerHTML = Math.round(windSpeedVal, 2);
+
+  let weatherVal = document.querySelector(".weather");
+  let weatherstyle = response.data.condition.description;
+  weatherVal.innerHTML = weatherstyle;
+
+  //let timeVal = document.querySelector(".time");
+  //let date = new Date(response.data.time * 1000);
+  //console.log(date);
+
+  //let dayVal = document.querySelector(".dayName");
 }
 
 function searchCity(city) {
