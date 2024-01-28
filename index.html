@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
@@ -33,8 +34,10 @@
               <span class="time"> 10:59</span>,<span class="weather">
                 cloudy </span
               ><br />
-              Humidity: <span class="humidity"> 10%</span>, Wind:
-              <span class="windSpeed">10.1km/hr</span>
+              Humidity:
+              <span class="colored"> <span id="humidity">10</span>%</span>,
+              Wind:
+              <span class="colored"><span id="windSpeed">10.1</span>km/hr</span>
             </p>
           </div>
           <div class="tempEmoji">
