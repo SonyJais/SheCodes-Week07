@@ -73,9 +73,10 @@ main {
 }
 
 .emoji {
-  font-size: 50px;
-  margin-top: 5px;
+  font-size: 40px;
+  margin: 0;
 }
+
 .temp {
   font-size: 60px;
 }

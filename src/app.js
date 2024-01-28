@@ -13,13 +13,29 @@ function refreshWeather(response) {
 
   let weatherVal = document.querySelector(".weather");
   let weatherstyle = response.data.condition.description;
-  weatherVal.innerHTML = weatherstyle;
+  weatherVal.innerHTML = capitalizeFirstLetter(weatherstyle);
 
-  //let timeVal = document.querySelector(".time");
-  //let date = new Date(response.data.time * 1000);
-  //console.log(date);
+  let timeVal = document.querySelector(".time");
+  let dayVal = document.querySelector(".dayName");
+  let date = new Date(response.data.time * 1000);
+  minuteVal = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+  dayVal = date.getDay(date);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  timeVal.innerHTML = `${date.getHours(date)}:${minuteVal}`;
+  dayVal.innerHTML = days[dayVal];
 
-  //let dayVal = document.querySelector(".dayName");
+  let iconVal = document.querySelector("#icon");
+  let emojiLink = `<img src="${response.data.condition.icon_url}" />`;
+  iconVal.innerHTML = emojiLink;
+  console.log(emojiLink);
 }
 
 function searchCity(city) {
