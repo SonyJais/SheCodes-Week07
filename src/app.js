@@ -19,7 +19,7 @@ function refreshWeather(response) {
   let dayVal = document.querySelector(".dayName");
   let date = new Date(response.data.time * 1000);
   minuteVal = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
-  dayVal = date.getDay(date);
+  dayValue = date.getDay(date);
   let days = [
     "Sunday",
     "Monday",
@@ -30,7 +30,7 @@ function refreshWeather(response) {
     "Saturday",
   ];
   timeVal.innerHTML = `${date.getHours(date)}:${minuteVal}`;
-  dayVal.innerHTML = days[dayVal];
+  dayVal.innerHTML = days[dayValue];
 
   let iconVal = document.querySelector("#icon");
   let emojiLink = `<img src="${response.data.condition.icon_url}" />`;
